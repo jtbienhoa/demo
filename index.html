@@ -12,6 +12,18 @@
     <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
+        $(document).keydown(function(event){
+            if(event.keyCode==123){
+                return false;
+            }
+            else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
+                     return false;
+            }
+        });
+
+        $(document).on("contextmenu",function(e){     
+           e.preventDefault();
+        });
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
@@ -34,19 +46,6 @@
   theme_color="#fa3c4c"
   logged_in_greeting="Xin chào, bạn có cần hỗ trợ gì không?"
   logged_out_greeting="Xin chào, bạn có cần hỗ trợ gì không?">
-        
-        $(document).keydown(function(event){
-    if(event.keyCode==123){
-        return false;
-    }
-    else if (event.ctrlKey && event.shiftKey && event.keyCode==73){        
-             return false;
-    }
-});
-
-$(document).on("contextmenu",function(e){     
-   e.preventDefault();
-});
       </div>
   </footer>
 </html>
